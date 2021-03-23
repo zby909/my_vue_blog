@@ -12,15 +12,21 @@ import HelloWorld from "@/components/HelloWorld.vue";
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    HelloWorld,
   },
   data() {
-	  return {
-		  
-	  }
+    return {};
+  },
+  methods: {
+    async getzby() {
+      const b = await this.$api.userApi.zby();
+      console.log(b);
+      const a = await this.$api.userApi.demsong();
+      console.log(a);
+    },
   },
   created() {
-	  this.$api.userApi.demsong();
+    this.getzby();
   },
 };
 </script>
